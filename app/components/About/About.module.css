@@ -1,0 +1,48 @@
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #f7f7f7, #e3e3f9, #dff0fa, #f7f7f7);
+  background-size: 300% 300%;
+  animation: diagonalFlow 20s ease-in-out infinite;
+  padding: 48px 48px;
+  border-radius: 12px;
+}
+
+@keyframes diagonalFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.container {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  max-width: 668px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.container p {
+  margin-bottom: 16px;
+}
+
+.author {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 32px 16px;
+  }
+}

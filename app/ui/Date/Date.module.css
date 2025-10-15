@@ -1,0 +1,27 @@
+.cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.time {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}

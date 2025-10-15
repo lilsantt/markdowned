@@ -1,0 +1,24 @@
+.author {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: var(--primary);
+}
+
+.post {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--text-color);
+}

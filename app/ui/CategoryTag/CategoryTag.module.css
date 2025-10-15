@@ -1,0 +1,30 @@
+.tag {
+  background-color: var(--tag-background);
+  padding: 2px 10px;
+  border-radius: 16px;
+  width: fit-content;
+  transition: 0.3s ease;
+}
+
+.tag:hover .name {
+  color: var(--green);
+}
+
+.tag:hover {
+  background-color: var(--light-green);
+}
+
+.link {
+  margin-top: auto;
+  width: fit-content;
+}
+
+.link .tag .name {
+  transition: 0.3s ease;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+
+  line-height: 20px;
+  color: var(--tag-name);
+}

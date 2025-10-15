@@ -1,0 +1,101 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Анимация появления */
+.item {
+  background-color: var(--tag-background);
+  border-radius: 16px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideIn 0.4s ease forwards;
+  transition: background-color 0.3s ease;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.item:hover {
+  background-color: var(--light-green);
+}
+
+.item:hover .title {
+  color: var(--green);
+}
+
+/* Активные состояния */
+.itemActive {
+  background-color: var(--purple-white);
+}
+
+.itemActive:hover {
+  background-color: var(--purple-white);
+}
+
+.itemActive .title,
+.itemActive:hover .title,
+.itemActive .count {
+  color: var(--purple);
+}
+
+/* Ссылка внутри категории */
+.link {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  height: fit-content;
+}
+
+/* Название и счётчик */
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--tag-name);
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.count {
+  margin-left: auto;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--tag-name);
+}
+
+/* Адаптив */
+@media (max-width: 1024px) {
+  .list {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    border-radius: 5px;
+  }
+
+  .link {
+    padding: 10px 20px;
+  }
+
+  .title {
+    font-size: 14px;
+    margin-left: 12px;
+  }
+
+  .count {
+    font-size: 14px;
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+}

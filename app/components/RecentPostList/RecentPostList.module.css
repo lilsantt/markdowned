@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  column-gap: 32px;
+  animation: fadeIn 0.4s ease-in forwards;
+  opacity: 0;
+  animation-delay: 0.3s;
+  transform: translateY(-20);
+}
+
+@keyframes fadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+  }
+}
