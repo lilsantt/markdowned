@@ -2,6 +2,7 @@ import Categories from "@/app/components/Categories/Categories";
 import PostList from "@/app/components/PostList/PostList";
 import { Search } from "@/app/components/Search/Search";
 import Section from "@/app/components/Section/Section";
+import { POSTS_ON_STANDART_PAGE } from "@/app/constants/counts";
 import { SITE_NAME } from "@/app/constants/names";
 import { getAllCategories } from "@/app/utils/getAllCategories";
 import { getCurrentPage } from "@/app/utils/getCurrentPage";
@@ -68,7 +69,7 @@ export default async function CategoryPage({ params }: CategoryPageParams) {
       >
         <PostList
           category={slug}
-          postsOnPage={6}
+          postsOnPage={POSTS_ON_STANDART_PAGE}
           page={currentPage}
           isPaginationEnable
           animatedOnLoad

@@ -1,5 +1,6 @@
 import PostList from "@/app/components/PostList/PostList";
 import Section from "@/app/components/Section/Section";
+import { POSTS_ON_STANDART_PAGE } from "@/app/constants/counts";
 import { SITE_NAME } from "@/app/constants/names";
 import getPostMetadata from "@/app/utils/getPostMetadata";
 import { redirect } from "next/navigation";
@@ -37,7 +38,7 @@ const PostsPage = async ({ params }: PostsPageParams) => {
   return (
     <Section title={`Все записи - Страница ${page}`}>
       <PostList
-        postsOnPage={6}
+        postsOnPage={POSTS_ON_STANDART_PAGE}
         page={currentPageNumber}
         isPaginationEnable
         animatedOnLoad

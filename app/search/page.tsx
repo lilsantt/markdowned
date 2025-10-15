@@ -3,19 +3,23 @@ import PostList from "../components/PostList/PostList";
 import { Search } from "../components/Search/Search";
 import Categories from "../components/Categories/Categories";
 import { SITE_NAME } from "../constants/names";
+import { POSTS_ON_STANDART_PAGE } from "../constants/counts";
 
 interface SearchParams {
-  searchParams: { s?: string; cat?: string };
+  searchParams: Promise<{ s?: string; cat?: string }>;
 }
 
 export async function generateMetadata({ searchParams }: SearchParams) {
+  const { s } = await searchParams;
   return {
-    title: `${SITE_NAME} - Поиск по ${searchParams.s}`,
+    title: `${SITE_NAME} - Поиск по ${s}`,
   };
 }
-export default function SearchPage({ searchParams }: SearchParams) {
-  const searchQuery = searchParams.s;
-  const catQuery = searchParams.cat;
+
+export default async function SearchPage({ searchParams }: SearchParams) {
+  const { s, cat } = await searchParams;
+  const searchQuery = s;
+  const catQuery = cat;
 
   if (!searchQuery) redirect("/");
 
@@ -23,7 +27,11 @@ export default function SearchPage({ searchParams }: SearchParams) {
     <main>
       <Search searchQuery={searchQuery} category={catQuery} />
       <Categories activeCat={catQuery} />
-      <PostList searchQuery={searchQuery} category={catQuery} postsOnPage={6} />
+      <PostList
+        searchQuery={searchQuery}
+        category={catQuery}
+        postsOnPage={POSTS_ON_STANDART_PAGE}
+      />
     </main>
   );
 }

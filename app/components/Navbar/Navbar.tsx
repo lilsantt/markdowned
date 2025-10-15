@@ -28,7 +28,6 @@ const Navbar = () => {
         ☰
       </button>
 
-      {/* Десктопное меню */}
       <ul className={styles.list}>
         {navLinks.map((link) => (
           <li key={link.title}>
@@ -42,7 +41,6 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Мобильное меню */}
       <div className={clsx(styles.overlay, isOpen && styles.open)}>
         <button
           className={styles.close}
