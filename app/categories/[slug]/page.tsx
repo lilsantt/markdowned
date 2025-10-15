@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 
-export default function RedirectCategoryPage({
+export default async function RedirectCategoryPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  redirect(`/categories/${params.slug}/page/1`);
+  const { slug } = await params;
+  redirect(`/categories/${slug}/page/1`);
 }

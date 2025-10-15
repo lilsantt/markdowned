@@ -8,18 +8,25 @@ import { redirect } from "next/navigation";
 
 interface SearchParams {
   searchParams: { s?: string; cat?: string };
-  params: { page: string };
+  params: Promise<{ page: string }>;
 }
 
 export async function generateMetadata({ searchParams, params }: SearchParams) {
+  const { page } = await params;
   return {
-    title: `${SITE_NAME} - Поиск по ${searchParams.s} - Страница ${params.page}`,
+    title: `${SITE_NAME} - Поиск по ${searchParams.s} - Страница ${page}`,
   };
 }
-export default function SearchPage({ searchParams, params }: SearchParams) {
+
+export default async function SearchPage({
+  searchParams,
+  params,
+}: SearchParams) {
+  const { page } = await params;
   const searchQuery = searchParams.s;
   const catQuery = searchParams.cat;
-  const page = getCurrentPage(params.page);
+  const currentPage = getCurrentPage(page);
+
   if (!searchQuery) redirect("/");
 
   return (
@@ -32,7 +39,7 @@ export default function SearchPage({ searchParams, params }: SearchParams) {
         <PostList
           searchQuery={searchQuery}
           category={catQuery}
-          page={page}
+          page={currentPage}
           postsOnPage={6}
         />
       </Section>

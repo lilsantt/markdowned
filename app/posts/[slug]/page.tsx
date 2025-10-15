@@ -13,10 +13,11 @@ export const generateStaticParams = async () => {
 };
 
 export const generateMetadata = async ({ params }: Params) => {
-  const post = getPostContent(params.slug);
+  const { slug } = await params;
+  const post = getPostContent(slug);
   if (!post)
     return {
-      title: "Перенеправление...",
+      title: "Перенаправление...",
     };
   return {
     title: `${SITE_NAME} — ${post.data.title}`,
@@ -25,12 +26,14 @@ export const generateMetadata = async ({ params }: Params) => {
 };
 
 interface Params {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
-export default function PostPage({ params }: Params) {
-  const post = getPostContent(params.slug);
+
+export default async function PostPage({ params }: Params) {
+  const { slug } = await params;
+  const post = getPostContent(slug);
   if (!post) redirect("/posts");
   return (
     <main>

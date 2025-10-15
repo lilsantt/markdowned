@@ -9,10 +9,10 @@ import getPostMetadata from "@/app/utils/getPostMetadata";
 import { redirect } from "next/navigation";
 
 interface CategoryPageParams {
-  params: {
+  params: Promise<{
     slug: string;
     page: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -38,20 +38,23 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: CategoryPageParams) {
+  const { slug, page } = await params;
   const categories = getAllCategories();
-  const currentCategory = categories.find((cat) => cat.title === params.slug);
+  const currentCategory = categories.find((cat) => cat.title === slug);
   return {
     title: `${SITE_NAME} - ${
       currentCategory?.title ? currentCategory.visualTitle : "Категории"
-    } - Страница ${params.page}`,
+    } - Страница ${page}`,
   };
 }
 
-export default function CategoryPage({ params }: CategoryPageParams) {
-  const slug = params.slug ? params.slug : null;
-  const page = getCurrentPage(params.page);
+export default async function CategoryPage({ params }: CategoryPageParams) {
+  const { slug, page } = await params;
+  const currentPage = getCurrentPage(page);
   const categories = getAllCategories().find((cat) => cat.title === slug);
+
   if (!slug) redirect("/categories");
+
   return (
     <>
       <Section contentClassName="row-gap">
@@ -61,12 +64,12 @@ export default function CategoryPage({ params }: CategoryPageParams) {
       <Section
         title={`Категория ${
           categories?.title ? categories.visualTitle : null
-        } - Страница ${params.page}`}
+        } - Страница ${page}`}
       >
         <PostList
           category={slug}
           postsOnPage={6}
-          page={page}
+          page={currentPage}
           isPaginationEnable
           animatedOnLoad
         />

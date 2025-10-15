@@ -6,9 +6,9 @@ import { redirect } from "next/navigation";
 import React from "react";
 
 interface PostsPageParams {
-  params: {
+  params: Promise<{
     page: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -22,17 +22,20 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostsPageParams) {
+  const { page } = await params;
   return {
-    title: `${SITE_NAME} - Записи - Страница ${params.page}`,
+    title: `${SITE_NAME} - Записи - Страница ${page}`,
   };
 }
 
-const PostsPage = ({ params }: PostsPageParams) => {
-  const currentPageNumber =
-    params.page && !isNaN(+params.page) ? +params.page : null;
+const PostsPage = async ({ params }: PostsPageParams) => {
+  const { page } = await params;
+  const currentPageNumber = page && !isNaN(+page) ? +page : null;
+
   if (currentPageNumber === null) redirect("/posts/page/1");
+
   return (
-    <Section title={`Все записи - Страница ${params.page}`}>
+    <Section title={`Все записи - Страница ${page}`}>
       <PostList
         postsOnPage={6}
         page={currentPageNumber}
