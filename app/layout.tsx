@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header/Header";
-import { SITE_NAME } from "./constants/names";
+import { SITE_DESCRIPTION, SITE_NAME } from "./constants/names";
 import Footer from "./components/Footer/Footer";
 import Container from "./components/Container/Container";
 import LayoutWrapper from "./ui/LayoutWrapper/LayoutWrapper";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: SITE_NAME,
-  description: "LBlog",
+  description: SITE_DESCRIPTION,
 };
 
 export default function RootLayout({
