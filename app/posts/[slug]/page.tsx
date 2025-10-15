@@ -3,7 +3,7 @@ import { SITE_NAME } from "@/app/constants/names";
 import { getPostContent } from "@/app/utils/getPostContend";
 import getPostMetadata from "@/app/utils/getPostMetadata";
 import { redirect } from "next/navigation";
-import React, { ReactNode } from "react";
+import React from "react";
 
 export const generateStaticParams = async () => {
   const posts = getPostMetadata();

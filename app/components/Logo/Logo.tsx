@@ -3,9 +3,7 @@ import Link from "next/link";
 import React from "react";
 import styles from "./Logo.module.css";
 
-type Props = {};
-
-const Logo = (props: Props) => {
+const Logo = () => {
   return (
     <Link href={"/"}>
       <h2 className={styles.logo}>{SITE_NAME}</h2>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import React from "react";
 import SocialsItem from "../SocialsItem/SocialsItem";
 import styles from "./Social.module.css";

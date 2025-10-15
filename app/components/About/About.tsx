@@ -2,10 +2,8 @@ import React from "react";
 import Author from "../Author/Author";
 import Socials from "../Socials/Socials";
 import styles from "./About.module.css";
-import PostList from "../PostList/PostList";
-type Props = {};
 
-const About = (props: Props) => {
+const About = () => {
   return (
     <div className={styles.about}>
       <div className={styles.container}>
@@ -18,10 +16,7 @@ const About = (props: Props) => {
         </div>
         <p>
           Пока учусь фронтенду, но уже успел поработать на фрилансе с реальными
-          проектами. Делаю адаптивную вёрстку, простые SPA на React и постепенно
-          осваиваю TypeScript. В работе часто сталкиваюсь с тем, что теория из
-          курсов отличается от реальных задач — например, когда нужно быстро
-          исправить баг или переверстать компонент под новые требования.
+          проектами. Делаю адаптивную вёрстку, SPA на NextJS.
         </p>
         <p>
           Пишу о том, как решаю конкретные задачи: почему вёрстка иногда

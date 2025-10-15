@@ -5,7 +5,6 @@ import Header from "./components/Header/Header";
 import { SITE_NAME } from "./constants/names";
 import Footer from "./components/Footer/Footer";
 import Container from "./components/Container/Container";
-import { headers } from "next/headers";
 import LayoutWrapper from "./ui/LayoutWrapper/LayoutWrapper";
 
 const inter = Inter({

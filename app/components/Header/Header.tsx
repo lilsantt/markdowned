@@ -3,11 +3,8 @@ import Logo from "../Logo/Logo";
 import Navbar from "../Navbar/Navbar";
 import Container from "../Container/Container";
 import styles from "./Header.module.css";
-import { Search } from "../Search/Search";
 
-type Props = {};
-
-const Header = (props: Props) => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <Container>

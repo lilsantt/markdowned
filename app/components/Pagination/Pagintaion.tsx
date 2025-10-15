@@ -18,7 +18,7 @@ function Pagintaion({
   const pagesCount = Math.ceil(postsCount / postsOnPage);
   if (currentPageNumber <= 0 || currentPageNumber > pagesCount)
     redirect("/posts/page/1");
-  let pages: number[] = getPaginationArray(pagesCount, currentPageNumber, 4);
+  const pages: number[] = getPaginationArray(pagesCount, currentPageNumber, 4);
   return (
     <div className={styles.pagination}>
       {currentPageNumber > 1 && (
@@ -66,7 +66,7 @@ function getPaginationArray(
   const pages = Array.from({ length: pagesCount }, (_, i) => i + 1);
   let pagesToRender = pagesToShow;
   let index = currentPageNumber - (pagesToShow - 1);
-  let finalPages = [];
+  const finalPages = [];
   while (pagesToRender) {
     if (pages[index - 1]) {
       finalPages.push(pages[index - 1]);

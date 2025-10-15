@@ -1,7 +1,6 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./Author.module.css";
-import Socials from "../Socials/Socials";
 type AuthorProps = {
   name: string;
   post: string;
