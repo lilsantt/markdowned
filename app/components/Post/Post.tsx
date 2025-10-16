@@ -10,7 +10,7 @@ interface Props {
 
 export const Post: React.FC<Props> = ({ post }) => {
   return (
-    <article className={styles.article}>
+    <article className={styles.article} role="article">
       <Image
         src={post.data.cover_image}
         width={1200}
