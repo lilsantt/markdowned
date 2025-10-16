@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "django-crash-course",
+    "title": "Django Crash Course",
+    "excerpt": "Django is a very powerful, high level Python framework for building web applications",
+    "cover_image": "/posts/img3.jpg",
+    "category": "Python",
+    "date": "24.06.2025",
+    "minutes_to_read": "4",
+    "category_cover_image": "/categories-icons/python.svg"
+  },
+  {
+    "slug": "javascript-performance-tips",
+    "title": "JavaScript Performance Tips",
+    "excerpt": "We will look at 10 simple tips and tricks to increase the speed of your code when writing JS",
+    "cover_image": "/posts/img1.jpg",
+    "category": "JavaScript",
+    "date": "20.06.2025",
+    "minutes_to_read": "2",
+    "category_cover_image": "/categories-icons/javascript.svg"
+  },
+  {
+    "slug": "new-in-php-8",
+    "title": "What's New In PHP 8?",
+    "excerpt": "In this article we will look at some of the new features offered in version 8 of PHP",
+    "cover_image": "/posts/img4.jpg",
+    "category": "PHP",
+    "date": "18.06.2025",
+    "minutes_to_read": "3",
+    "category_cover_image": "/categories-icons/php.svg"
+  },
+  {
+    "slug": "python-book-review",
+    "title": "Python Book Review",
+    "excerpt": "In this review, we will be looking at the new Python book from Oriley",
+    "cover_image": "/posts/img6.jpg",
+    "category": "Python",
+    "date": "15.06.2025",
+    "minutes_to_read": "4",
+    "category_cover_image": "/categories-icons/python.svg"
+  },
+  {
+    "slug": "react-crash-course",
+    "title": "React Crash Course",
+    "excerpt": "Crash course to learn the React JavaScript library. We will look at components, hooks and more",
+    "cover_image": "/posts/img5.jpg",
+    "category": "JavaScript",
+    "date": "14.06.2025",
+    "minutes_to_read": "2",
+    "category_cover_image": "/categories-icons/javascript.svg"
+  },
+  {
+    "slug": "tailwind-vs-bootstrap",
+    "title": "Tailwind vs. Bootstrap",
+    "excerpt": "Both Tailwind and Bootstrap are very popular CSS frameworks. In this article, we will compare them",
+    "cover_image": "/posts/img2.jpg",
+    "category": "CSS",
+    "date": "19.06.2025",
+    "minutes_to_read": "5",
+    "category_cover_image": "/categories-icons/css.svg"
+  },
+  {
+    "slug": "writing-great-unit-tests",
+    "title": "Writing Great Unit Tests",
+    "excerpt": "We will look at 10 simple tips and tricks on writing unit tests in JavaScript",
+    "cover_image": "/posts/img7.jpg",
+    "category": "JavaScript",
+    "date": "21.06.2025",
+    "minutes_to_read": "2",
+    "category_cover_image": "/categories-icons/javascript.svg"
+  }
+]
